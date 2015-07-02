@@ -17,7 +17,7 @@ feature 'Starting a new game' do
     visit '/'
     fill_in("name", with:'Rob')
     click_button("Submit")
-    select 'Rock', from: "Option"
+    select 'Rock', from: "option"
     click_button("PLAY!")
     expect(page).to have_content "You selected Rock ..."
   end

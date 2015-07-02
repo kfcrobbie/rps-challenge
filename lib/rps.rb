@@ -2,7 +2,6 @@ require 'sinatra/base'
 require_relative 'game'
 
 class RPS < Sinatra::Base
-
   set :views, proc { File.join(root, '..','views') }
 
   # start the server if ruby file executed directly
@@ -20,7 +19,7 @@ class RPS < Sinatra::Base
   end
 
   get '/outcome' do
-    @choice = params[:Option]
+    @choice = params[:option] # it's a little unconventional to have capital letters in symbols
     @cpu = Cpu_player.new
     @cpu_choice = @cpu.cpu_choice
     erb :outcome
